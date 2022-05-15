@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		
+		ListaEnlazadaTareas tareas = new ListaEnlazadaTareas();
+		
 		boolean salir = false;
 		while(salir ==  false) {
 			System.out.println("\n------- Brain-to-Place -------\n");
@@ -20,6 +22,18 @@ public class Main {
 			
 			switch(entrada1) {
 			  case "1":
+				  System.out.println("Ingrese el titulo de su Tarea:");
+				  String titulo = lector.nextLine();
+				  System.out.println("Ingrese la descripcion de su Tarea:");
+				  String descripcion = lector.nextLine();
+				  System.out.println("Ingrese la fecha maxima, para la realizacion de su Tarea:");
+				  String fecha = lector.nextLine();
+				  System.out.println("Ingrese un numero de 1 a 5, donde 5 es la prioridad mas alta:");
+				  int prioridad = lector.nextInt();
+				  
+				  Tarea tarea = new Tarea(titulo, descripcion, fecha, prioridad);
+				  tareas.agregarNodoInicio(tarea);
+				  
 				  break;
 			  case "2":
 				  break;
